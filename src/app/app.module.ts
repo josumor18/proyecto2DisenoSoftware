@@ -8,6 +8,7 @@ import { VendedorDetailsComponent } from './vendedores/vendedor-details/vendedor
 import { VendedorListComponent } from './vendedores/vendedor-list/vendedor-list.component';
 import { ComboDetailsComponent } from './promociones/combo-details/combo-details.component';
 import { ComboListComponent } from './promociones/combo-list/combo-list.component';
+import { ProductoListComponent } from './productos/producto-list/producto-list.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ComboListComponent } from './promociones/combo-list/combo-list.componen
     VendedorDetailsComponent,
     VendedorListComponent,
     ComboDetailsComponent,
-    ComboListComponent
+    ComboListComponent,
+    ProductoListComponent
   ],
   imports: [
     BrowserModule,

@@ -31,6 +31,10 @@
       <label for="vendedor-calif">Calificación</label>
       <input class="form-control" name="vendedor-calif" [(ngModel)]="vendedor.calif" placeholder="Calificacion"/>
     </div>
+    <div class="form-group">
+      <label>Promociones</label>
+      <combo-list></combo-list>
+    </div>
     <button class="btn btn-primary" *ngIf="!vendedor._id" (click)="createVendedor(vendedor)">Create</button>
     <button class="btn btn-info" *ngIf="vendedor._id" (click)="updateVendedor(vendedor)">Update</button>
     <button class="btn btn-danger" *ngIf="vendedor._id" (click)="deleteVendedor(vendedor._id)">Delete</button>
