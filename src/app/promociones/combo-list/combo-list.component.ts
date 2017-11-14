@@ -6,8 +6,7 @@ import { Vendedor } from 'app/vendedores/vendedor';
 @Component({
   selector: 'combo-list',
   templateUrl: './combo-list.component.html',
-  styleUrls: ['./combo-list.component.css'],
-  providers: [ComboService]
+  styleUrls: ['./combo-list.component.css']
 })
 
 export class ComboListComponent implements OnInit {
@@ -45,9 +44,10 @@ export class ComboListComponent implements OnInit {
 
   createNewCombo() {
     var combo: Combo = {
+      vendedor: '',
       nombre: '',
       precio: 0,
-      detalle: '',
+      detalle: ''
     };
 
     // By default, a newly-created combo will have the selected state.
