@@ -13,7 +13,7 @@ import { Vendedor } from 'app/vendedores/vendedor';
 export class ComboListComponent{
 
   @Input()
-  vendedor: Vendedor;
+  vendedorSel: Vendedor;
   
   combos: Combo[]
   selectedCombo: Combo
@@ -25,7 +25,7 @@ export class ComboListComponent{
       .getCombos()
       .then((combos: Combo[]) => {
         this.combos = combos.map((combo) => {
-          if(combo.vendedor == vendedor.id){
+          if(combo.vendedor == vendedorSel.id){
             return combo;
           }
         });
