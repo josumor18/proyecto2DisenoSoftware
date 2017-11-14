@@ -7,7 +7,10 @@
         *ngFor="let vendedor of vendedores"
         (click)="selectVendedor(vendedor)"
         [class.active]="vendedor === selectedVendedor">
-        {{vendedor.name}} + "wertre"
+        {{vendedor.name}}
+        Cantidad de productos: {{vendedor.cant_prod}}
+        Cantidad de promociones: {{vendedor.cant_prom}}
+        Calificaciones: {{vendedor.calif}}
       </li>
     </ul>
     <button class="btn btn-warning" (click)="createNewVendedor()">New</button>
