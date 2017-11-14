@@ -1,13 +1,10 @@
 <div class="row">
-<p>Esto es una prueba</p>
 <div class="col-md-5">
   
     <h2>Vendedores</h2>
     <ul class="list-group">
       <li class="list-group-item"
-        *ngFor="let vendedor of vendedores"
-        (click)="selectVendedor(vendedor)"
-        [class.active]="vendedor === selectedVendedor">
+        *ngFor="let vendedor of vendedores">
         {{vendedor.name}}
       </li>
     </ul>
@@ -16,7 +13,6 @@
    
    <div class="col-md-5 col-md-offset-2">
       <div class="container">
-        <p>Esto es otra prueba</p>
         <vendedor-details
           [vendedor]="selectedVendedor"
           [createHandler]="addVendedor"
@@ -28,6 +24,10 @@
    </div>
 </div>
 <!-->
+
+        (click)="selectVendedor(vendedor)"
+        [class.active]="vendedor === selectedVendedor"
+
 <vendedor-details></vendedor-details>
       [vendedor]="selectedVendedor"
       [createHandler]="addVendedor"
