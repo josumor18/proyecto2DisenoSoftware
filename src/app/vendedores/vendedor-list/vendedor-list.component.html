@@ -17,6 +17,13 @@
    <div class="col-md-5 col-md-offset-2">
       <div class="container">
         <p>Esto es otra prueba</p>
+        <vendedor-details
+          [vendedor]="selectedVendedor"
+          [createHandler]="addVendedor"
+          [updateHandler]="updateVendedor"
+          [deleteHandler]="deleteVendedor">
+        </vendedor-details>
+      
       </div>
    </div>
 </div>
