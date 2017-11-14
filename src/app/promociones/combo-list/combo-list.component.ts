@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Combo } from '../combo';
 import { ComboService } from '../combo.service';
+import { Vendedor } from 'app/vendedores/vendedor';
 
 @Component({
   selector: 'combo-list',
@@ -11,6 +12,9 @@ import { ComboService } from '../combo.service';
 
 export class ComboListComponent implements OnInit {
 
+  @Input()
+  vendedor: Vendedor;
+  
   combos: Combo[]
   selectedCombo: Combo
 
@@ -21,7 +25,9 @@ export class ComboListComponent implements OnInit {
       .getCombos()
       .then((combos: Combo[]) => {
         this.combos = combos.map((combo) => {
-          return combo;
+          if(combo.vendedor == vendedor.id){
+            return combo;
+          }
         });
        
       });
