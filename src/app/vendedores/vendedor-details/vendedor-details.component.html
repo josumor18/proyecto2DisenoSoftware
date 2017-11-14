@@ -15,14 +15,6 @@
       <label for="vendedor-apellidos">Apellidos</label>
       <input class="form-control" name="vendedor-apellidos" [(ngModel)]="vendedor.apellidos" placeholder="Apellidos"/>
     </div>
-    <div class="form-group">
-      <label for="vendedor-name">Name</label>
-      <input class="form-control" name="vendedor-name2" [(ngModel)]="vendedor.name" placeholder="Name"/>
-    </div>
-    <div class="form-group">
-      <label for="vendedor-apellidos">Apellidos</label>
-      <input class="form-control" name="vendedor-apellidos" [(ngModel)]="vendedor.apellidos" placeholder="Apellidos"/>
-    </div>
     <button class="btn btn-primary" *ngIf="!vendedor._id" (click)="createVendedor(vendedor)">Create</button>
     <button class="btn btn-info" *ngIf="vendedor._id" (click)="updateVendedor(vendedor)">Update</button>
     <button class="btn btn-danger" *ngIf="vendedor._id" (click)="deleteVendedor(vendedor._id)">Delete</button>
