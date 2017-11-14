@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Vendedor } from '../vendedor';
-import { VendedorService } from '../vendedor.service';
-import { VendedorDetailsComponent } from '../vendedor-details/vendedor-details.component';
+import { Producto } from '../producto';
+import { ProductoService } from '../producto.service';
+import { ProductoDetailsComponent } from '../producto-details/producto-details.component';
 
 @Component({
   selector: 'producto-list',
