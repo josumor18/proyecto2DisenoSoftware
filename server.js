@@ -4,6 +4,7 @@ var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
 var VENDEDORES_COLLECTION = "vendedores";
+var COMBOS_COLLECTION = "combos";
 
 var app = express();
 app.use(bodyParser.json());
@@ -41,9 +42,9 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
-/*  "/api/contacts"
- *    GET: finds all contacts
- *    POST: creates a new contact
+/*  "/api/vendedoress"
+ *    GET: finds all vendedores
+ *    POST: creates a new vendedor
  */
 
 app.get("/api/vendedores", function(req, res) {
@@ -72,10 +73,23 @@ app.post("/api/vendedores", function(req, res) {
   });
 });
 
-/*  "/api/contacts/:id"
- *    GET: find contact by id
- *    PUT: update contact by id
- *    DELETE: deletes contact by id
+/*  "/api/combos"
+ *    GET: finds all combos
+ */
+app.get("/api/combos", function(req, res) {
+  db.collection(COMBOS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get combos.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+});
+
+/*  "/api/vendedores/:id"
+ *    GET: find vendedor by id
+ *    PUT: update vendedor by id
+ *    DELETE: deletes vendedor by id
  */
 
 app.get("/api/vendedores/:id", function(req, res) {
@@ -108,6 +122,21 @@ app.delete("/api/vendedores/:id", function(req, res) {
       handleError(res, err.message, "Failed to delete vendedor");
     } else {
       res.status(200).json(req.params.id);
+    }
+  });
+});
+
+
+/*  "/api/combos/:id"
+ *    GET: find combo by id
+ */
+
+app.get("/api/combos/:id", function(req, res) {
+  db.collection(COMBOS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get combo");
+    } else {
+      res.status(200).json(doc);
     }
   });
 });
