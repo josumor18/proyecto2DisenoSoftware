@@ -2,6 +2,6 @@ export class Combo {
   _id?: string;
   nombre: string;
   precio: number;
-  productos: [producto];
+  productos: [Producto];
   detalle: string;
 }
