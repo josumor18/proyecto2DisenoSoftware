@@ -25,7 +25,7 @@ export class ComboListComponent{
       .getCombos()
       .then((combos: Combo[]) => {
         this.combos = combos.map((combo) => {
-          if(combo.vendedor == vendedorSel.id){
+          if(combo.vendedor == this.vendedorSel.id){
             return combo;
           }
         });
