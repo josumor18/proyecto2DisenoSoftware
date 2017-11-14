@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Vendedor } from '../vendedor';
 import { VendedorService } from '../vendedor.service';
 import { VendedorDetailsComponent } from '../vendedor-details/vendedor-details.component';
+import { ComboListComponent } from 'src/app/promociones/combo-list/combo-list.component';
 
 @Component({
   selector: 'vendedor-list',
