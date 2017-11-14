@@ -39,7 +39,7 @@ export class VendedorListComponent implements OnInit {
   createNewVendedor() {
     var vendedor: Vendedor = {
       name: '',
-      apellidos: ''
+      apellidos: '',
     };
 
     // By default, a newly-created vendedor will have the selected state.
