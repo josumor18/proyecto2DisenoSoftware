@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Vendedor } from '../vendedor';
 import { VendedorService } from '../vendedor.service';
+import { ComboService } from 'app/promociones/combo.service';
 import { ComboListComponent } from 'app/promociones/combo-list/combo-list.component';
 
 @Component({
