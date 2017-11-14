@@ -23,7 +23,7 @@ export class VendedorListComponent implements OnInit {
       .then((vendedores: Vendedor[]) => {
         this.vendedores = vendedores.map((vendedor) => {
           }
-          return contact;
+          return vendedor;
         });
       });
   }
