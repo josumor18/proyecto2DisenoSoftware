@@ -8,6 +8,10 @@
 <div *ngIf="vendedor" class="row">
   <form class="col-md-12">
     <div class="form-group">
+      <label for="vendedor-id">Identificación</label>
+      <input class="form-control" name="vendedor-id" [(ngModel)]="vendedor.id" placeholder="Identificacion"/>
+    </div>
+    <div class="form-group">
       <label for="vendedor-name">Nombre</label>
       <input class="form-control" name="vendedor-name" [(ngModel)]="vendedor.name" placeholder="Name"/>
     </div>
