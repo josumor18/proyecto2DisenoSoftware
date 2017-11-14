@@ -15,7 +15,6 @@ import { ProductoListComponent } from './productos/producto-list/producto-list.c
     AppComponent,
     VendedorDetailsComponent,
     VendedorListComponent,
-    ComboDetailsComponent,
     ComboListComponent,
     ProductoListComponent
   ],
