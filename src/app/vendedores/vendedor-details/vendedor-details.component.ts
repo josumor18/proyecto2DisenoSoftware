@@ -3,7 +3,7 @@ import { Vendedor } from '../vendedor';
 import { VendedorService } from '../vendedor.service';
 
 @Component({
-  selector: 'app-vendedor-details',
+  selector: 'vendedor-details',
   templateUrl: './vendedor-details.component.html',
   styleUrls: ['./vendedor-details.component.css'],
 })
