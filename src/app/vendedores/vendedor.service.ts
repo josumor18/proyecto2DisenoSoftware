@@ -39,9 +39,9 @@ export class VendedorService {
     // put("/api/vendedores/:id")
     updateVendedor(putVendedor: Vendedor): Promise<void | Vendedor> {
       var putUrl = this.vendedoresUrl + '/' + putVendedor._id;
-      return this.http.put(putUrl, putContact)
+      return this.http.put(putUrl, putVendedor)
                  .toPromise()
-                 .then(response => response.json() as Contact)
+                 .then(response => response.json() as Vendedor)
                  .catch(this.handleError);
     }
 
