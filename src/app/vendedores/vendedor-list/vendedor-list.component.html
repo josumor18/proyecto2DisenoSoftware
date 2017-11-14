@@ -7,7 +7,7 @@
         *ngFor="let vendedor of vendedores"
         (click)="selectVendedor(vendedor)"
         [class.active]="vendedor === selectedVendedor">
-        {{vendedor.name}}
+        {{vendedor.name}}<br>
         Cantidad de productos: {{vendedor.cant_prod}}
         Cantidad de promociones: {{vendedor.cant_prom}}
         Calificaciones: {{vendedor.calif}}
