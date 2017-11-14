@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Combo } from '../combo';
 import { ComboService } from '../combo.service';
 
