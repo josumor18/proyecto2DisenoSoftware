@@ -7,8 +7,7 @@ import { ComboListComponent } from 'app/promociones/combo-list/combo-list.compon
 @Component({
   selector: 'vendedor-details',
   templateUrl: './vendedor-details.component.html',
-  styleUrls: ['./vendedor-details.component.css'],
-  providers: [ComboService]
+  styleUrls: ['./vendedor-details.component.css']
 })
 
 export class VendedorDetailsComponent {
