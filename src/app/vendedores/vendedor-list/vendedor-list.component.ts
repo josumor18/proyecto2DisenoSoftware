@@ -42,6 +42,7 @@ export class VendedorListComponent implements OnInit {
     var vendedor: Vendedor = {
       id: '',
       name: '',
+      telefono: '';
       cant_prod: 0,
       cant_prom: 0,
       calif: 0
