@@ -1,8 +1,10 @@
 <div class="row">
+<p>Esto es una prueba</p>
+<!-->
   <div class="col-md-5">
-  <p>Esto es una prueba</p>
+  
     <h2>Vendedores</h2>
-    <!-->
+    
     <ul class="list-group">
       <li class="list-group-item"
         *ngFor="let vendedor of vendedores"
@@ -13,8 +15,9 @@
     </ul>
     
     <button class="btn btn-warning" (click)="createNewVendedor()">New</button>
-    </-->
+    
   </div>
+  </-->
   <div class="col-md-5 col-md-offset-2">
     <vendedor-details
       [vendedor]="selectedVendedor"
