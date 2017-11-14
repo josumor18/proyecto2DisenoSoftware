@@ -3,8 +3,11 @@
   
     <h2>Vendedores</h2>
     <ul class="list-group">
-      <li class="list-group-item">
-        
+      <li class="list-group-item"
+        *ngFor="let vendedor of vendedores"
+        (click)="selectVendedor(vendedor)"
+        [class.active]="vendedor === selectedVendedor">
+        {{vendedor.name}}
       </li>
     </ul>
     <button class="btn btn-warning" (click)="createNewVendedor()">New</button>
@@ -23,10 +26,7 @@
    </div>
 </div>
 <!-->
-        *ngFor="let vendedor of vendedores">
-        (click)="selectVendedor(vendedor)"
-        [class.active]="vendedor === selectedVendedor"
-        {{vendedor.name}}
+        
 
 <vendedor-details></vendedor-details>
       [vendedor]="selectedVendedor"
