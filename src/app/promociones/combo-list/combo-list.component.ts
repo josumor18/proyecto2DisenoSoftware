@@ -9,34 +9,66 @@ import { ComboService } from '../combo.service';
   providers: [ComboService]
 })
 
-export class ComboDetailsComponent {
-  @Input()
-  combo: Combo;
+export class ComboListComponent implements OnInit {
 
-  @Input()
-  createHandler: Function;
-  @Input()
-  updateHandler: Function;
-  @Input()
-  deleteHandler: Function;
+  combos: Combo[]
+  selectedCombo: Combo
 
-  constructor (private comboService: ComboService) {}
+  constructor(private comboService: ComboService) { }
 
-  createCombo(combo: Combo) {
-    this.comboService.createCombo(combo).then((newCombo: Combo) => {
-      this.createHandler(newCombo);
+  ngOnInit() {
+     this.comboService
+      .getCombos()
+      .then((combos: Combo[]) => {
+        this.combo = combos.map((combo) => {
+          return combo;
+        });
+       
+      });
+  }
+
+  private getIndexOfCombo = (comboId: String) => {
+    return this.combos.findIndex((combo) => {
+      return combo._id === comboId;
     });
   }
 
-  updateCombo(combo: Combo): void {
-    this.comboService.updateCombo(combo).then((updatedCombo: Combo) => {
-      this.updateHandler(updatedCombo);
-    });
+  selectCombo(combo: Combo) {
+    this.selectedCombo = combo
   }
 
-  deleteCombo(comboId: String): void {
-    this.comboService.deleteCombo(comboId).then((deletedComboId: String) => {
-      this.deleteHandler(deletedComboId);
-    });
+  createNewCombo() {
+    var combo: Combo = {
+      nombre: '',
+      precio: ,
+      detalle: '',
+    };
+
+    // By default, a newly-created combo will have the selected state.
+    this.selectCombo(combo);
+  }
+
+  deleteCombo = (comboId: String) => {
+    var idx = this.getIndexOfCombo(comboId);
+    if (idx !== -1) {
+      this.combos.splice(idx, 1);
+      this.selectCombo(null);
+    }
+    return this.combos;
+  }
+
+  addCombo = (combo: Combo) => {
+    this.combos.push(combo);
+    this.selectCombo(combo);
+    return this.combos;
+  }
+
+  updateCombo = (combo: Combo) => {
+    var idx = this.getIndexOfCombo(combo._id);
+    if (idx !== -1) {
+      this.combos[idx] = combo;
+      this.selectCombo(combo);
+    }
+    return this.combos;
   }
 }
