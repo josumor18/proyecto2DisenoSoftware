@@ -20,7 +20,7 @@ export class ComboListComponent implements OnInit {
      this.comboService
       .getCombos()
       .then((combos: Combo[]) => {
-        this.combo = combos.map((combo) => {
+        this.combos = combos.map((combo) => {
           return combo;
         });
        
