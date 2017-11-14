@@ -40,7 +40,7 @@ export class ComboListComponent implements OnInit {
   createNewCombo() {
     var combo: Combo = {
       nombre: '',
-      precio: ,
+      precio: 0,
       detalle: '',
     };
 
