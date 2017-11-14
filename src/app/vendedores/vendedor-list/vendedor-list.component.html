@@ -4,9 +4,7 @@
   
     <h2>Vendedores</h2>
     <ul class="list-group">
-      <li class="list-group-item"
-        *ngFor="let vendedor of vendedores"
-        {{vendedor.name}}
+      <li class="list-group-item">
       </li>
     </ul>
     <button class="btn btn-warning" (click)="createNewVendedor()">New</button>
@@ -24,7 +22,7 @@
       <li class="list-group-item"
         *ngFor="let vendedor of vendedores"
         (click)="selectVendedor(vendedor)"
-        [class.active]="vendedor === selectVendedor">
+        [class.active]="vendedor === selectedVendedor">
         {{vendedor.name}}
       </li>
     </ul>

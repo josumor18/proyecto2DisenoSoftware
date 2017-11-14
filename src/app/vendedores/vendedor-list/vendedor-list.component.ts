@@ -21,9 +21,8 @@ export class VendedorListComponent implements OnInit {
      this.vendedorService
       .getVendedores()
       .then((vendedores: Vendedor[]) => {
-        this.vendedores = vendedores.map((vendedor) => {
-          return vendedor;
-        });
+        
+       
       });
   }
 
