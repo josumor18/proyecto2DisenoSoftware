@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Combo } from '../combo';
 import { ComboService } from '../combo.service';
 import { Vendedor } from 'app/vendedores/vendedor';
@@ -6,10 +6,11 @@ import { Vendedor } from 'app/vendedores/vendedor';
 @Component({
   selector: 'combo-list',
   templateUrl: './combo-list.component.html',
-  styleUrls: ['./combo-list.component.css']
+  styleUrls: ['./combo-list.component.css'],
+  providers: [ComboService]
 })
 
-export class ComboListComponent implements OnInit {
+export class ComboListComponent{
 
   @Input()
   vendedor: Vendedor;
@@ -47,7 +48,7 @@ export class ComboListComponent implements OnInit {
       vendedor: '',
       nombre: '',
       precio: 0,
-      detalle: ''
+      detalle: '',
     };
 
     // By default, a newly-created combo will have the selected state.
