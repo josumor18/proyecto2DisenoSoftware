@@ -8,6 +8,10 @@ var VENDEDORES_COLLECTION = "vendedores";
 var app = express();
 app.use(bodyParser.json());
 
+// Create link to Angular build directory
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
@@ -75,10 +79,35 @@ app.post("/api/vendedores", function(req, res) {
  */
 
 app.get("/api/vendedores/:id", function(req, res) {
+  db.collection(VENDEDORES_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get vendedor");
+    } else {
+      res.status(200).json(doc);
+    }
+  });
 });
 
 app.put("/api/vendedores/:id", function(req, res) {
+  var updateDoc = req.body;
+  delete updateDoc._id;
+
+  db.collection(VENDEDORES_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to update vendedor");
+    } else {
+      updateDoc._id = req.params.id;
+      res.status(200).json(updateDoc);
+    }
+  });
 });
 
 app.delete("/api/vendedores/:id", function(req, res) {
+  db.collection(VENDEDORES_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    if (err) {
+      handleError(res, err.message, "Failed to delete vendedor");
+    } else {
+      res.status(200).json(req.params.id);
+    }
+  });
 });
