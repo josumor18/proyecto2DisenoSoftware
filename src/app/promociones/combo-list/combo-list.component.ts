@@ -32,6 +32,7 @@ export class ComboListComponent{
        
       });
       
+      this.combosAux = [];
       this.combosVendedor();
   }
   
