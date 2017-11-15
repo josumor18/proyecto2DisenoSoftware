@@ -1,5 +1,8 @@
 
 <td>{{combosVendedor()}}</td>
+<tr *ngFor="let combo of combosAux">
+    {{combo.nombre}}
+</tr>
 <ul *ngFor="let combo of combos"
     class="list-group">
     
