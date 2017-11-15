@@ -58,7 +58,8 @@ export class ComboListComponent{
 
   createNewCombo() {
     var combo: Combo = {
-      vendedor: '',
+      codigo: '',
+	  vendedor: '',
       nombre: '',
       precio: 0,
       detalle: '',
