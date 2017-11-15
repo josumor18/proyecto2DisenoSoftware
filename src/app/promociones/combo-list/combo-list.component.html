@@ -3,12 +3,11 @@
 <tr *ngFor="let combo of combosAux">
     {{combo.nombre}}
 </tr>
-<ul *ngFor="let combo of combos"
+<ul *ngFor="let combo of combosAux"
     class="list-group">
     
-    <li *ngIf="combo.vendedor == vendedor.id"
-        class="list-group-item">
-                {{combo.nombre}}
+    <li class="list-group-item">
+        {{combo.nombre}}
     </li>
     
 </ul>

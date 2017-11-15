@@ -30,6 +30,8 @@ export class ComboListComponent{
         });
        
       });
+      
+      combosAux=[];
   }
 
   combosVendedor(){
