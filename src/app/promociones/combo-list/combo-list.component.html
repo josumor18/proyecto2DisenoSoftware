@@ -1,7 +1,9 @@
 {{combosVendedor()}}
 <ul class="list-group">
     <li class="list-group-item"
-        *ngFor="let combo of combosAux">
+        *ngFor="let combo of combosAux"
+        (click)="selectCombo(combo)"
+        [class.active]="combo === selectedCombo">
         {{combo.nombre}}<br>
         Precio: {{combo.precio}}
     </li>
