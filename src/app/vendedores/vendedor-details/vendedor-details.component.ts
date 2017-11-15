@@ -3,6 +3,7 @@ import { Vendedor } from '../vendedor';
 import { VendedorService } from '../vendedor.service';
 import { ComboService } from 'app/promociones/combo.service';
 import { ComboListComponent } from 'app/promociones/combo-list/combo-list.component';
+import { ComboDetailsComponent } from 'app/promociones/combo-details/combo-details.component';
 
 @Component({
   selector: 'vendedor-details',
