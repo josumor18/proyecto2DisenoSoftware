@@ -33,7 +33,7 @@ export class ProductoListComponent {
   productosCombo(){
     this.productosAux = [];
     for(var i = 0; i < this.productos.length; i++){
-        if(this.productos[i].promocion == this.combo.id){
+        if(this.productos[i].promocion == this.combo.codigo){
             this.productosAux.push(this.productos[i]);
         }
     }
