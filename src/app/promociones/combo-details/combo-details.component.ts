@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Combo } from '../combo';
+import { ComboService } from '../combo.service';
 
 @Component({
-  selector: 'app-combo-details',
+  selector: 'combo-details',
   templateUrl: './combo-details.component.html',
-  styleUrls: ['./combo-details.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./combo-details.component.css']
 })
-export class ComboDetailsComponent implements OnInit {
 
-  constructor() { }
+export class ComboDetailsComponent {
+  @Input()
+  combo: Combo;
 
-  ngOnInit() {
-  }
-
+  constructor (private comboService: ComboService) {}
 }
