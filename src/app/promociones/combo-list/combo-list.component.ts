@@ -31,7 +31,7 @@ export class ComboListComponent{
        
       });
       
-      combosAux=[];
+      this.combosAux=[];
   }
 
   combosVendedor(){
