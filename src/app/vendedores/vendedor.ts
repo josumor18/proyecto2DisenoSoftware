@@ -5,5 +5,5 @@ export class Vendedor {
   telefono: string;
   cant_prod: number;
   cant_prom: number;
-  calif: number;
+  calif: string;
 }

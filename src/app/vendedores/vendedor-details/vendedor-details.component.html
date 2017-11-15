@@ -9,27 +9,30 @@
 <div *ngIf="vendedor" class="row">
   <form class="col-md-12">
     <div class="form-group">
-      <label for="vendedor-id">Identificación</label>
-      <input class="form-control" name="vendedor-id" [(ngModel)]="vendedor.id" placeholder="Identificacion"/>
-    </div>
-    <div class="form-group">
       <label for="vendedor-name">Nombre</label>
+      <tr {{vendedor.name}}/>
       <input class="form-control" name="vendedor-name" [(ngModel)]="vendedor.name" placeholder="Name"/>
     </div>
     <div class="form-group">
       <label for="vendedor-telefono">Teléfono</label>
+      <tr {{vendedor.telefono}}/>
       <input class="form-control" name="vendedor-telefono" [(ngModel)]="vendedor.telefono" placeholder="Telefono"/>
     </div>
     <div class="form-group">
       <label for="vendedor-cant_prod">Cantidad de productos</label>
+      <tr {{vendedor.cant_prod}}/>
       <input class="form-control" name="vendedor-cant_prod" [(ngModel)]="vendedor.cant_prod" placeholder="CantidadProd"/>
     </div>
     <div class="form-group">
       <label for="vendedor-cant_prom">Cantidad de promociones</label>
+      <tr {{vendedor.cant_prom}}/>
       <input class="form-control" name="vendedor-cant_prom" [(ngModel)]="vendedor.cant_prom" placeholder="CantidadProm"/>
     </div>
     <div class="form-group">
       <label for="vendedor-calif">Calificación</label>
+      <div style="ffff00">
+        <tr {{vendedor.calif}}/>
+      </div>
       <input class="form-control" name="vendedor-calif" [(ngModel)]="vendedor.calif" placeholder="Calificacion"/>
     </div>
     <div class="form-group">
