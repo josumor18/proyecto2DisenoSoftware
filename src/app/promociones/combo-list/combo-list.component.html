@@ -1,5 +1,6 @@
-<tr *ngFor="let combo of combos">
-   {{combo.nombre="holi"}}
+<tr *ngFor="let combo of combos"
+    [class.active]="combo === 'holi'">
+   {{combo.nombre}}
 </tr>
 <ul *ngFor="let combo of combos"
     class="list-group">
