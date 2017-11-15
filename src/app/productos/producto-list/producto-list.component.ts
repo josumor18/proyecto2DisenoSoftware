@@ -11,6 +11,7 @@ import { ProductoService } from '../producto.service';
 export class ProductoListComponent implements OnInit {
 
   productos: Producto[]
+  productosAux: Combo[]
   selectedProducto: Producto
 
   constructor(private productoService: ProductoService) { }
