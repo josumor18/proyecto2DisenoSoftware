@@ -1,3 +1,15 @@
-<p>
-  producto-list works!
-</p>
+<div>
+{{productosCombo()}}
+<ul class="list-group">
+    <li class="list-group-item"
+        *ngFor="let producto of productosAux"
+		
+       <!-- (click)="selectCombo(combo)"
+        [class.active]="combo === selectedCombo">   -->
+		
+        {{producto.nombre}}<br>
+        Precio: {{producto.precio}}
+    </li>
+</ul>
+
+</div>
