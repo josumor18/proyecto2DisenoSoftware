@@ -19,7 +19,7 @@ export class ComboListComponent{
   combosAux: Combo[]
   selectedCombo: Combo
 
-  constructor(private comboService: ComboService) { }
+  constructor(private comboService: ComboService) {}
 
   ngOnInit() {
      this.comboService
@@ -31,7 +31,7 @@ export class ComboListComponent{
        
       });
       
-      this.combosAux=[];
+      combosVendedor();
   }
 
   combosVendedor(){
