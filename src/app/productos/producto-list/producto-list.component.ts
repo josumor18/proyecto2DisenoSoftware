@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Producto } from '../producto';
 import { ProductoService } from '../producto.service';
 import { Combo } from 'app/promociones/combo';
@@ -9,7 +9,7 @@ import { Combo } from 'app/promociones/combo';
   styleUrls: ['./producto-list.component.css'],
   providers: [ProductoService]
 })
-export class ProductoListComponent implements OnInit {
+export class ProductoListComponent {
 
  @Input()
   combo: Combo;
