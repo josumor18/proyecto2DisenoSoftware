@@ -13,6 +13,8 @@ import { Vendedor } from 'app/vendedores/vendedor';
 export class ComboListComponent{
 
 
+  @Input()
+  vendedor: Vendedor;
   
   combos: Combo[]
   combosAux: Combo[]
@@ -32,9 +34,6 @@ export class ComboListComponent{
       
       this.combosVendedor();
   }
-
-    @Input()
-    vendedor: Vendedor;
   
   combosVendedor(){
     this.combosAux = [];
