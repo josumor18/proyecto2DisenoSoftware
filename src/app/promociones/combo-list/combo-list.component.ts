@@ -16,6 +16,7 @@ export class ComboListComponent{
   vendedor: Vendedor;
   
   combos: Combo[]
+  combosAux: Combo[]
   selectedCombo: Combo
 
   constructor(private comboService: ComboService) { }
