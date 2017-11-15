@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Producto } from '../producto';
 import { ProductoService } from '../producto.service';
+import { Combo } from 'app/promociones/combo';
 
 @Component({
   selector: 'producto-list',
@@ -8,9 +9,12 @@ import { ProductoService } from '../producto.service';
   styleUrls: ['./producto-list.component.css'],
   providers: [ProductoService]
 })
-export class ProductoListComponent implements OnInit {
+export class ProductoListComponent {
 
+ @Input()
+  combo: Combo;
   productos: Producto[]
+  productosAux: Producto[]
   selectedProducto: Producto
 
   constructor(private productoService: ProductoService) { }
@@ -26,53 +30,65 @@ export class ProductoListComponent implements OnInit {
       });
   }
 
-}
-/*
-  private getIndexOfVendedor = (vendedorId: String) => {
-    return this.vendedores.findIndex((vendedor) => {
-      return vendedor._id === vendedorId;
+  productosCombo(){
+    this.productosAux = [];
+    for(var i = 0; i < this.productos.length; i++){
+        if(this.productos[i].promocion == this.combo.codigo){
+            this.productosAux.push(this.productos[i]);
+        }
+    }
+  }
+  
+    
+  private getIndexOfProducto = (productoId: String) => {
+    return this.productos.findIndex((producto) => {
+      return producto._id === productoId;
     });
   }
-
-  selectVendedor(vendedor: Vendedor) {
-    this.selectedVendedor = vendedor
+/*
+  selectCombo(combo: Combo) {
+    this.selectedCombo = combo
   }
 
-  createNewVendedor() {
-    var vendedor: Vendedor = {
-      id: '',
-      name: '',
-      telefono: '',
-      cant_prod: 0,
-      cant_prom: 0,
-      calif: 0
+  createNewCombo() {
+    var combo: Combo = {
+      vendedor: '',
+      nombre: '',
+      precio: 0,
+      detalle: '',
     };
 
-    // By default, a newly-created vendedor will have the selected state.
-    this.selectVendedor(vendedor);
+    // By default, a newly-created combo will have the selected state.
+    this.selectCombo(combo);
   }
 
-  deleteVendedor = (vendedorId: String) => {
-    var idx = this.getIndexOfVendedor(vendedorId);
+  deleteCombo = (comboId: String) => {
+    var idx = this.getIndexOfCombo(comboId);
     if (idx !== -1) {
-      this.vendedores.splice(idx, 1);
-      this.selectVendedor(null);
+      this.combos.splice(idx, 1);
+      this.selectCombo(null);
     }
-    return this.vendedores;
+    return this.combos;
   }
 
-  addVendedor = (vendedor: Vendedor) => {
-    this.vendedores.push(vendedor);
-    this.selectVendedor(vendedor);
-    return this.vendedores;
+  addCombo = (combo: Combo) => {
+    this.combos.push(combo);
+    this.selectCombo(combo);
+    return this.combos;
   }
 
-  updateVendedor = (vendedor: Vendedor) => {
-    var idx = this.getIndexOfVendedor(vendedor._id);
+  updateCombo = (combo: Combo) => {
+    var idx = this.getIndexOfCombo(combo._id);
     if (idx !== -1) {
-      this.vendedores[idx] = vendedor;
-      this.selectVendedor(vendedor);
+      this.combos[idx] = combo;
+      this.selectCombo(combo);
     }
-    return this.vendedores;
+    return this.combos;
   }
-}*/
+}
+  */
+  
+  
+  
+  
+}
