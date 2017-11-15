@@ -46,7 +46,6 @@ export class VendedorListComponent implements OnInit {
       cant_prod: 0,
       cant_prom: 0,
       calif: 0,
-      promociones:{Combo: any}
     };
 
     // By default, a newly-created vendedor will have the selected state.

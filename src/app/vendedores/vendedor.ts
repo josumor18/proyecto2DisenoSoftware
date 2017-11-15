@@ -6,5 +6,4 @@ export class Vendedor {
   cant_prod: number;
   cant_prom: number;
   calif: number;
-  promociones: {Combo};
 }
