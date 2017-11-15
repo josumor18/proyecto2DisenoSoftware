@@ -1,8 +1,7 @@
 
 <div *ngIf="vendedor" class="row">
   <div class="col-md-12">
-    <h2 *ngIf="vendedor._id">Vendedor Details</h2>
-    <h2 *ngIf="!vendedor._id">New Vendedor</h2>
+    <h2 *ngIf="vendedor._id">Perfil</h2>
   </div>
 </div>
 
@@ -11,7 +10,6 @@
     <div class="form-group">
       <label for="vendedor-name">Nombre</label>
       <p> {{vendedor.name}}</p>
-      <input class="form-control" name="vendedor-name" [(ngModel)]="vendedor.name" placeholder="Name"/>
     </div>
     <div class="form-group">
       <label for="vendedor-telefono">Teléfono</label>
