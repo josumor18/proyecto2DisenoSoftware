@@ -1,9 +1,13 @@
 
 <ul class="list-group">
-    <tr *ngFor="let combo of combos">
-        <li class="list-group-item"
-            *ngIf="combo.vendedor == vendedor.id">
+    
+    <li class="list-group-item">
+            
+        <tr *ngFor="let combo of combos">
+            <tr *ngIf="combo.vendedor == vendedor.id">
                 {{combo.nombre}}
-        </li>
-    </tr>
+            </tr>
+        </tr>
+    </li>
+    
 </ul>
