@@ -1,5 +1,5 @@
 <tr *ngFor="let combo of combos"
-    [class.active]="combo = 'holi'">
+    ngIf="combo.vendedor == vendedor.id">
    {{combo.nombre}}
 </tr>
 <ul *ngFor="let combo of combos"
