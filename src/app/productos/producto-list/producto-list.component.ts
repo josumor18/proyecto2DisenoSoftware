@@ -10,6 +10,8 @@ import { ProductoService } from '../producto.service';
 })
 export class ProductoListComponent implements OnInit {
 
+ @Input()
+  combo: Combo;
   productos: Producto[]
   productosAux: Producto[]
   selectedProducto: Producto
@@ -30,7 +32,7 @@ export class ProductoListComponent implements OnInit {
   productosCombo(){
     this.productosAux = [];
     for(var i = 0; i < this.productos.length; i++){
-        if(this.productos[i].promocion == this.promocion.id){
+        if(this.productos[i].promocion == this.combo.id){
             this.productosAux.push(this.productos[i]);
         }
     }
