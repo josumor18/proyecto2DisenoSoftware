@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../producto';
 import { ProductoService } from '../producto.service';
-import { Combo } from 'app/promociones/combos/combo';
+import { Combo } from 'app/promociones/combo';
 
 @Component({
   selector: 'producto-list',
