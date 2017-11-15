@@ -33,9 +33,10 @@ export class ComboListComponent{
   }
 
   combosVendedor(){
-    foreach(combo in this.combos){
-        if(combo.vendedor == this.vendedor.id){
-            this.combosAux.push(combo);
+    this.combosAux = [];
+    for(var i = 0; i < this.combos.length; i++){
+        if(this.combos[i].vendedor == this.vendedor.id){
+            this.combosAux.push(this.combos[i]);
         }
     }
   }
