@@ -9,6 +9,8 @@ import { VendedorListComponent } from './vendedores/vendedor-list/vendedor-list.
 import { ComboListComponent } from './promociones/combo-list/combo-list.component';
 import { ComboDetailsComponent } from './promociones/combo-details/combo-details.component';
 import { ProductoListComponent } from './productos/producto-list/producto-list.component';
+import { DescuentoDetailsComponent } from './promociones/descuento-details/descuento-details.component';
+import { DescuentoListComponent } from './promociones/descuento-list/descuento-list.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ProductoListComponent } from './productos/producto-list/producto-list.c
     VendedorListComponent,
     ComboListComponent,
     ComboDetailsComponent,
-    ProductoListComponent
+    ProductoListComponent,
+    DescuentoDetailsComponent,
+    DescuentoListComponent
   ],
   imports: [
     BrowserModule,
