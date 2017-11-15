@@ -32,6 +32,14 @@ export class ComboListComponent{
       });
   }
 
+  combosVendedor(){
+    foreach(combo in this.combos){
+        if(combo.vendedor == this.vendedor.id){
+            this.combosAux.push(combo);
+        }
+    }
+  }
+  
   private getIndexOfCombo = (comboId: String) => {
     return this.combos.findIndex((combo) => {
       return combo._id === comboId;
