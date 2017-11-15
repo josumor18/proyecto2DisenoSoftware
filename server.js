@@ -4,7 +4,7 @@ var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
 var VENDEDORES_COLLECTION = "vendedores";
-var COMBOS_COLLECTION = "combos";
+var PROMOS_COLLECTION = "promociones";
 
 var app = express();
 app.use(bodyParser.json());
@@ -77,9 +77,9 @@ app.post("/api/vendedores", function(req, res) {
  *    GET: finds all combos
  */
 app.get("/api/combos", function(req, res) {
-  db.collection(COMBOS_COLLECTION).find({}).toArray(function(err, docs) {
+  db.collection(PROMOS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
-      handleError(res, err.message, "Failed to get combos.");
+      handleError(res, err.message, "Failed to get promocion.");
     } else {
       res.status(200).json(docs);
     }
@@ -132,9 +132,9 @@ app.delete("/api/vendedores/:id", function(req, res) {
  */
 
 app.get("/api/combos/:id", function(req, res) {
-  db.collection(COMBOS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+  db.collection(PROMOS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
-      handleError(res, err.message, "Failed to get combo");
+      handleError(res, err.message, "Failed to get promocion");
     } else {
       res.status(200).json(doc);
     }
