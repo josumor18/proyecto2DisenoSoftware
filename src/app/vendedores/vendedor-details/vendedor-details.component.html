@@ -10,28 +10,28 @@
   <form class="col-md-12">
     <div class="form-group">
       <label for="vendedor-name">Nombre</label>
-      <tr {{vendedor.name}}/>
+      <p> {{vendedor.name}}</p>
       <input class="form-control" name="vendedor-name" [(ngModel)]="vendedor.name" placeholder="Name"/>
     </div>
     <div class="form-group">
       <label for="vendedor-telefono">Teléfono</label>
-      <tr {{vendedor.telefono}}/>
+      <p> {{vendedor.telefono}}</p>
       <input class="form-control" name="vendedor-telefono" [(ngModel)]="vendedor.telefono" placeholder="Telefono"/>
     </div>
     <div class="form-group">
       <label for="vendedor-cant_prod">Cantidad de productos</label>
-      <tr {{vendedor.cant_prod}}/>
+      <p> {{vendedor.cant_prod}}</p>
       <input class="form-control" name="vendedor-cant_prod" [(ngModel)]="vendedor.cant_prod" placeholder="CantidadProd"/>
     </div>
     <div class="form-group">
       <label for="vendedor-cant_prom">Cantidad de promociones</label>
-      <tr {{vendedor.cant_prom}}/>
+      <p>{{vendedor.cant_prom}}</p>
       <input class="form-control" name="vendedor-cant_prom" [(ngModel)]="vendedor.cant_prom" placeholder="CantidadProm"/>
     </div>
     <div class="form-group">
       <label for="vendedor-calif">Calificación</label>
       <div style="ffff00">
-        <tr {{vendedor.calif}}/>
+        <p> {{vendedor.calif}}</p>
       </div>
       <input class="form-control" name="vendedor-calif" [(ngModel)]="vendedor.calif" placeholder="Calificacion"/>
     </div>
