@@ -9,6 +9,7 @@ import { Combo } from 'app/promociones/combo';
   styleUrls: ['./producto-list.component.css'],
   providers: [ProductoService]
 })
+
 export class ProductoListComponent {
 
   @Input()
