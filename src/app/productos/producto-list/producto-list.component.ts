@@ -11,8 +11,9 @@ import { Combo } from 'app/promociones/combo';
 })
 export class ProductoListComponent {
 
- @Input()
+  @Input()
   combo: Combo;
+  
   productos: Producto[]
   productosAux: Producto[]
   selectedProducto: Producto
