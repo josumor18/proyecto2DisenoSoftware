@@ -5,6 +5,7 @@ var ObjectID = mongodb.ObjectID;
 
 var VENDEDORES_COLLECTION = "vendedores";
 var PROMOS_COLLECTION = "promociones";
+var PRODS_COLLECTION = "productos";
 
 var app = express();
 app.use(bodyParser.json());
@@ -87,6 +88,19 @@ app.get("/api/combos", function(req, res) {
   });
 });
 
+/*  "/api/productos"
+ *    GET: finds all productos
+ */
+app.get("/api/productos", function(req, res) {
+  db.collection(PRODS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get producto.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+});
+
 /*  "/api/vendedores/:id"
  *    GET: find vendedor by id
  *    PUT: update vendedor by id
@@ -136,6 +150,20 @@ app.get("/api/combos/:id", function(req, res) {
   db.collection(PROMOS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get promocion");
+    } else {
+      res.status(200).json(doc);
+    }
+  });
+});
+
+/*  "/api/productos/:id"
+ *    GET: find producto by id
+ */
+
+app.get("/api/productos/:id", function(req, res) {
+  db.collection(PRODS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get producto");
     } else {
       res.status(200).json(doc);
     }
